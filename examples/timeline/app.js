@@ -7,25 +7,33 @@ var ReactCanvas = require('react-canvas');
 var Page = require('./components/Page');
 var articles = require('../common/data');
 
+
 var Surface = ReactCanvas.Surface;
 var ListView = ReactCanvas.ListView;
+var Group = ReactCanvas.Group;
 
 var App = React.createClass({
 
   render: function () {
     var size = this.getSize();
+    var stylex= {width:100,height: 100, borderWidth: 2,borderColor: 'red'};
     return (
       <Surface top={0} left={0} width={size.width} height={size.height}>
-        <ListView
-          style={this.getListViewStyle()}
-          snapping={true}
-          scrollingDeceleration={0.92}
-          scrollingPenetrationAcceleration={0.13}
-          numberOfItemsGetter={this.getNumberOfPages}
-          itemHeightGetter={this.getPageHeight}
-          itemGetter={this.renderPage} />
+      <Group style={stylex} onMouseMove={this.onMouseMove} onMouseLeave={this.leave} onMouseEnter={this.enter}></Group>
       </Surface>
     );
+  },
+
+  onMouseMove: function (e) {
+    // console.log('xxx', e);
+  },
+
+  enter: function (e) {
+    console.log('enter')
+  },
+
+  leave: function (e) {
+    console.log('leave')
   },
 
   renderPage: function (pageIndex, scrollTop) {
