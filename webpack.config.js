@@ -8,7 +8,7 @@ module.exports = {
     'timeline': ['./examples/timeline/app.js'],
     'css-layout': ['./examples/css-layout/app.js'],
     'gradient': ['./examples/gradient/app.js'],
-    'export': ['./examples/export/app.js'],
+    'react-with-canvas': ['./examples/export/app.js'],
   },
 
   output: {
