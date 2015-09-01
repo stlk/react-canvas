@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "linebreak": "^0.3.0",
+    "lodash": "^3.10.1",
     "scroller": "git://github.com/mjohnston/scroller"
   }
 }

@@ -9,6 +9,7 @@ module.exports = {
     'css-layout': ['./examples/css-layout/app.js'],
     'gradient': ['./examples/gradient/app.js'],
     'react-with-canvas': ['./examples/export/app.js'],
+    'mouse-move': ['./examples/mouse-move/app.js']
   },
 
   output: {
