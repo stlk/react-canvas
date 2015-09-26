@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
 
   entry: './examples/export/app.js',
@@ -6,9 +8,17 @@ module.exports = {
     filename: 'build/react-with-canvas.min.js'
   },
 
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production'),
+      }
+    })
+  ],
+
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'jsx-loader!transform/cacheable?envify' },
+      { test: /\.js$/, loader: 'jsx-loader' },
     ],
     postLoaders: [
       { loader: "transform?brfs" }

@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
   cache: true,
 
@@ -15,9 +17,17 @@ module.exports = {
     filename: '[name].js'
   },
 
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development'),
+      }
+    })
+  ],
+
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'jsx-loader!transform/cacheable?envify' },
+      { test: /\.js$/, loader: 'jsx-loader' },
     ],
     postLoaders: [
       { loader: "transform?brfs" }
